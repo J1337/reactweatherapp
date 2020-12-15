@@ -16,3 +16,24 @@ ul {
 	padding: 0;
 	margin: 0;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img,
+p {
+	margin: 0;
+	padding: 0;
+}
+
+#root {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: #eef6fb;
+}

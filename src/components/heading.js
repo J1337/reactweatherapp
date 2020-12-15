@@ -2,9 +2,9 @@ import React from 'react';
 
 const Heading = (props) => {
 	return (
-		<div onClick={props.loadWeather}>
-			<ul>
-				<li>Ottawa</li>
+		<div onClick={props.loadWeather} className="heading">
+			<ul className="heading-list">
+				<li className="active">Ottawa</li>
 				<li>Moscow</li>
 				<li>Tokyo</li>
 			</ul>

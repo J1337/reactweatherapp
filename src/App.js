@@ -13,7 +13,7 @@ class App extends React.Component {
 			city: 'Ottawa',
 			temp: '',
 			desc: '',
-			icon: ''
+			icon: '',
 		};
 	}
 
@@ -25,6 +25,7 @@ class App extends React.Component {
 					isLoaded: true,
 					temp: Math.round(result.main.temp),
 					desc: result.weather[0].main,
+					icon: `http://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`,
 				});
 			});
 	}
@@ -38,6 +39,7 @@ class App extends React.Component {
 					city: city,
 					temp: Math.round(result.main.temp),
 					desc: result.weather[0].main,
+					icon: `http://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`,
 				});
 			});
 	};
@@ -49,9 +51,9 @@ class App extends React.Component {
 			return <div>Loading...</div>;
 		} else {
 			return (
-				<div>
+				<div className="app">
 					<Heading loadWeather={this.getWeather} />
-					<Forecast city={this.state.city} temp={this.state.temp} desc={this.state.desc} />
+					<Forecast city={this.state.city} temp={this.state.temp} desc={this.state.desc} icon={this.state.icon} />
 				</div>
 			);
 		}
