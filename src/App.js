@@ -26,7 +26,7 @@ class App extends React.Component {
 					isLoaded: true,
 					temp: Math.round(result.main.temp),
 					desc: result.weather[0].main,
-					icon: `http://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`,
+					icon: `https://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`,
 				});
 			});
 	}
@@ -42,7 +42,7 @@ class App extends React.Component {
 					city: city,
 					temp: Math.round(result.main.temp),
 					desc: result.weather[0].main,
-					icon: `http://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`,
+					icon: `https://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`,
 				});
 			});
 	};
