@@ -17,6 +17,7 @@ class App extends React.Component {
 		};
 	}
 
+	//When component loads fetch initial weather data then store in state
 	componentDidMount() {
 		fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&units=metric&appid=${api_key}`)
 			.then((res) => res.json())
@@ -30,8 +31,10 @@ class App extends React.Component {
 			});
 	}
 
+	// When city name is clicked, get weather data for that city name, store in state, and call function to change active
 	getWeather = async (e) => {
 		const city = e.target.innerHTML;
+		this.activeClass(e);
 		fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${api_key}`)
 			.then((res) => res.json())
 			.then((result) => {
@@ -42,6 +45,15 @@ class App extends React.Component {
 					icon: `http://openweathermap.org/img/wn/${result.weather[0].icon}@2x.png`,
 				});
 			});
+	};
+
+	// Change active class on headings for style change
+	activeClass = (e) => {
+		const headings = document.getElementsByClassName('heading-list-item');
+		for (const item of headings) {
+			item.classList.remove('active');
+			e.target.classList.add('active');
+		}
 	};
 
 	render() {
