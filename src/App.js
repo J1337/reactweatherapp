@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Heading from './components/heading';
 import Forecast from './components/forecast';
 
@@ -13,6 +13,7 @@ class App extends React.Component {
 			city: 'Ottawa',
 			temp: '',
 			desc: '',
+			icon: ''
 		};
 	}
 
